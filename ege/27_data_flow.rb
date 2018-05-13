@@ -10,5 +10,5 @@ gets.to_i.times do
   max_10 = number if number % 10 == 0 && number > max_10
   max_seq = number if max_seq < number
 end
-puts(gets.to_i == (max_2 * max_5 > max_10 * max_seq ? res = max_2 * max_5 : res = max_10 * max_seq) ?
-  "Вычисленное контрольное значение: #{res}\nКонтроль пройден" : "Контроль не пройден")
+puts gets.to_i == (max_2 * max_5 > max_10 * max_seq ? res = max_2 * max_5 : res = max_10 * max_seq) ?
+  "Вычисленное контрольное значение: #{res}\nКонтроль пройден" : "Контроль не пройден"
