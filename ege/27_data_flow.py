@@ -1,6 +1,19 @@
 #/usr/bin/python3
 #-*-coding:utf-8-*-
 
+# 6, 95, 17, 10, 102, 957, 95, 9690
+max_2 = max_5 = max_10 = max_seq = 0
+for i in range(int(input())):
+  number = int(input())
+  if (number % 2 == 0) and (number % 5 != 0) and (number > max_2): max_2 = number
+  if (number % 5 == 0) and (number % 2 != 0) and (number > max_5): max_5 = number
+  if (number % 10 == 0) and (number > max_10): max_10 = number
+  if (max_seq < number): max_seq = number
+if (max_2 * max_5 > max_10 * max_seq): res = max_2 * max_5
+else: res = max_10 * max_seq
+if (int(input()) == res): print("Вычесленное контрольное значение: " + str(res) + "\nКонтроль пройден")
+else: print("Контроль не пройден")
+
 # По каналу связи передаётся последовательность положительных целых чисел, все числа не превышают 1000.
 # Количество чисел известно, но может быть очень велико.
 
@@ -22,16 +35,3 @@
 # На вход программе в первой строке подаётся количество чисел N.
 # В каждой из последующих N строк записано одно натуральное число, не превышающее 1000.
 # В последней строке записано контрольное значение.
-
-# 6, 95, 17, 10, 102, 957, 95, 9690
-max_2 = max_5 = max_10 = max_seq = 0
-for i in range(int(input())):
-  number = int(input())
-  if (number % 2 == 0) and (number % 5 != 0) and (number > max_2): max_2 = number
-  if (number % 5 == 0) and (number % 2 != 0) and (number > max_5): max_5 = number
-  if (number % 10 == 0) and (number > max_10): max_10 = number
-  if (max_seq < number): max_seq = number
-if (max_2 * max_5 > max_10 * max_seq): res = max_2 * max_5
-else: res = max_10 * max_seq
-if (int(input()) == res): print("Вычесленное контрольное значение: " + str(res) + "\nКонтроль пройден")
-else: print("Контроль не пройден")
