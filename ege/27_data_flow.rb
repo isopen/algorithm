@@ -11,4 +11,4 @@ gets.to_i.times do
   max_seq = number if max_seq < number
 end
 puts(gets.to_i == (max_2 * max_5 > max_10 * max_seq ? res = max_2 * max_5 : res = max_10 * max_seq) ?
-  "Вычесленное контрольное значение: #{res}\nКонтроль пройден" : "Контроль не пройден")
+  "Вычисленное контрольное значение: #{res}\nКонтроль пройден" : "Контроль не пройден")

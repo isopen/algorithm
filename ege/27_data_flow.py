@@ -11,7 +11,7 @@ for i in range(int(input())):
   if (max_seq < number): max_seq = number
 if (max_2 * max_5 > max_10 * max_seq): res = max_2 * max_5
 else: res = max_10 * max_seq
-if (int(input()) == res): print("Вычесленное контрольное значение: " + str(res) + "\nКонтроль пройден")
+if (int(input()) == res): print("Вычисленное контрольное значение: " + str(res) + "\nКонтроль пройден")
 else: print("Контроль не пройден")
 
 # По каналу связи передаётся последовательность положительных целых чисел, все числа не превышают 1000.
