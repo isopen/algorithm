@@ -12,3 +12,14 @@ gets.to_i.times do
 end
 puts gets.to_i == (max_2 * max_5 > max_10 * max_seq ? res = max_2 * max_5 : res = max_10 * max_seq) ?
   "Вычисленное контрольное значение: #{res}\nКонтроль пройден" : "Контроль не пройден"
+
+#if (max_2 * max_5 > max_10 * max_seq) then
+#  res = max_2 * max_5
+#else
+#  res = max_10 * max_seq
+#end
+#if (gets.to_i == res) then
+#  puts "Вычисленное контрольное значение: #{res}\nКонтроль пройден"
+#else
+#  puts "Контроль не пройден"
+#end
