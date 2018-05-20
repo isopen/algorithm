@@ -23,17 +23,17 @@ while c_max:
 print(result)
 
 # python style
-# h = {}
-# dat = ''
-# while True:
-#   dat = input()
-#   if dat == '.': break
-#   if dat in h: h[dat] += 1
-#   else: h[dat] = 1
-# res = ''
-# for i in sorted(h.items(), key = lambda item: (-item[1], item[0])):
-#   res += i[0]
-# print(res)
+#h = {}
+#dat = ''
+#while True:
+#  dat = input()
+#  if dat == '.': break
+#  if dat in h: h[dat] += 1
+#  else: h[dat] = 1
+#res = ''
+#for i in sorted(h.items(), key = lambda item: (-item[1], item[0])):
+#  res += i[0]
+#print(res)
 
 # Написать программу сортировки строки содержащей символы
 # латинского алфавита по частоте появления и алфавиту
