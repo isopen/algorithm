@@ -1,4 +1,4 @@
-#!/usr/bin/ruby
+#!/usr/bin/python3
 #coding:utf-8
 
 number_speeds = int(input())
