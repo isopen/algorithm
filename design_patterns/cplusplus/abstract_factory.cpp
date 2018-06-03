@@ -1,6 +1,6 @@
 // Design pattern abstract factory
-// g++ -std=c++11 -pthread -o abstract_factory abstract_factory.cpp
-// g++ -std=c++1z -pthread -o abstract_factory abstract_factory.cpp
+// g++ -std=c++11 -o abstract_factory abstract_factory.cpp
+// g++ -std=c++1z -o abstract_factory abstract_factory.cpp
 
 #include <iostream>
 #include <vector>
@@ -78,8 +78,8 @@ class CitadelFactory {
     virtual ~CitadelFactory() {}
 };
 
-// башня орков (фабрика для создания воинов орды)
-class OrcTowerFactory : public CitadelFactory {
+// башня орды (фабрика для создания воинов орды)
+class HordeTowerFactory : public CitadelFactory {
   public:
     Undead* create_undead() {
       return new HordeUndead;
@@ -150,7 +150,7 @@ class RaceBuilder {
 
 int main() {
   RaceBuilder race_builder;
-  OrcTowerFactory orc_tower_factory;
+  HordeTowerFactory orc_tower_factory;
   AllianceBarracksFactory alliance_barracks_factory;
   RaceStore* orc_store = race_builder.create_race_storage(orc_tower_factory);
   RaceStore* human_store = race_builder.create_race_storage(alliance_barracks_factory);
