@@ -23,7 +23,7 @@ class Singleton {
     }
     // не доверяем и делаем через mutex (dev: 0.320112, 0.316816; -O3: 0.186264, 0.186611)
     /*static Singleton& get_instance() {
-      std::lock_guard<std::mutex> myLock(t_mutex);
+      std::lock_guard<std::mutex> my_lock(t_mutex);
       if (!instance) {
         instance = new Singleton();
       }
@@ -33,7 +33,7 @@ class Singleton {
     /*static Singleton* get_instance() {
       Singleton* ptr_instance = instance.load();
       if (!ptr_instance) {
-        std::lock_guard<std::mutex> myLock(t_mutex);
+        std::lock_guard<std::mutex> my_lock(t_mutex);
         ptr_instance = instance.load();
         if (!ptr_instance) {
           ptr_instance = new Singleton();
@@ -45,7 +45,7 @@ class Singleton {
     /*static Singleton* get_instance() {
       Singleton* ptr_instance = instance.load(std::memory_order_acquire);
       if (!ptr_instance) {
-        std::lock_guard<std::mutex> myLock(t_mutex);
+        std::lock_guard<std::mutex> my_lock(t_mutex);
         ptr_instance = instance.load(std::memory_order_relaxed);
         if (!ptr_instance) {
           ptr_instance = new Singleton();
@@ -77,6 +77,7 @@ int main() {
   }
   auto end = std::chrono::system_clock::now() - begin;
   std::cout << std::chrono::duration<double>(end).count() << std::endl;
+  return 0;
 }
 
 // делаем сложно для текущего анализа
