@@ -1,14 +1,17 @@
+// Design pattern singleton
+// cpu: intel i7 4-8
+// g++ -std=c++11 -pthread -o singleton singleton.cpp
+// g++ -std=c++1z -pthread -o singleton singleton.cpp
+// принцип: "доверяй, но проверяй"
+// Вы можете провести тестирование для асинхронных вызовов
+// Вы можете дополнить реализацию
+
 #include <iostream>
 #include <chrono>
 #include <future>
 #include <mutex>
 #include <atomic>
 #include <thread>
-
-// принцип: "доверяй, но проверяй"
-// cpu: intel i7 4-8
-// g++ -std=c++11 -pthread -o singleton singleton.cpp
-// g++ -std=c++1z -pthread -o singleton singleton.cpp
 
 const auto num_calls = 10000000;
 
@@ -68,7 +71,7 @@ class Singleton {
 std::atomic<Singleton*> Singleton::instance;
 std::mutex Singleton::t_mutex;
 
-// делаем просто для текущего анализа
+// делаем просто для текущего анализа. синхронный тест.
 int main() {
   //constexpr auto test = num_calls * 8; // (dev: 0.178927, 0.17338; -O: 0.0315557, 0.0343075, 0.0365598)
   auto begin = std::chrono::system_clock::now();
@@ -80,7 +83,7 @@ int main() {
   return 0;
 }
 
-// делаем сложно для текущего анализа
+// делаем сложно для текущего анализа. асинхронный тест.
 /*std::chrono::duration<double> get_time() {
   auto begin = std::chrono::system_clock::now();
   for (size_t i = 0; i <= num_calls; ++i) {
