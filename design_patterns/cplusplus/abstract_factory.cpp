@@ -1,6 +1,7 @@
 // Design pattern abstract factory
 // g++ -std=c++11 -o abstract_factory abstract_factory.cpp
 // g++ -std=c++1z -o abstract_factory abstract_factory.cpp
+// Вы можете создать устроить батл
 
 #include <iostream>
 #include <vector>
@@ -139,7 +140,7 @@ class RaceStore {
 // cтроитель расы
 class RaceBuilder {
   public:
-    RaceStore* create_race_storage(CitadelFactory& factory) {
+    RaceStore* create_race(CitadelFactory& factory) {
       RaceStore* race_store = new RaceStore;
       race_store->undead.push_back(factory.create_undead());
       race_store->mage.push_back(factory.create_mage());
@@ -150,14 +151,14 @@ class RaceBuilder {
 
 int main() {
   RaceBuilder race_builder;
-  HordeTowerFactory orc_tower_factory;
+  HordeTowerFactory horde_tower_factory;
   AllianceBarracksFactory alliance_barracks_factory;
-  RaceStore* orc_store = race_builder.create_race_storage(orc_tower_factory);
-  RaceStore* human_store = race_builder.create_race_storage(alliance_barracks_factory);
+  RaceStore* horde_store = race_builder.create_race(horde_tower_factory);
+  RaceStore* alliance_store = race_builder.create_race(alliance_barracks_factory);
   std::cout << "Horde:" << std::endl;
-  orc_store->info();
+  horde_store->info();
   std::cout << "Alliance:" << std::endl;
-  human_store->info();
+  alliance_store->info();
   return 0;
 }
 
