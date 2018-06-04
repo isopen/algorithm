@@ -1,7 +1,8 @@
 // Design pattern abstract factory
 // g++ -std=c++11 -o abstract_factory abstract_factory.cpp
 // g++ -std=c++1z -o abstract_factory abstract_factory.cpp
-// Вы можете создать устроить батл
+// Вы можете создать батл
+// Вы можете улучшить реализацию
 
 #include <iostream>
 #include <vector>
