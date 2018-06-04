@@ -1,4 +1,4 @@
-// Design pattern abstract factory
+// Design pattern - abstract factory
 // g++ -std=c++11 -o abstract_factory abstract_factory.cpp
 // g++ -std=c++1z -o abstract_factory abstract_factory.cpp
 // Вы можете создать батл
@@ -6,7 +6,6 @@
 
 #include <iostream>
 #include <vector>
-
 
 // типы воинов
 class Undead {
@@ -141,7 +140,7 @@ class RaceStore {
 // cтроитель расы
 class RaceBuilder {
   public:
-    RaceStore* create_race(CitadelFactory& factory) {
+    RaceStore* create_race(CitadelFactory &factory) {
       RaceStore* race_store = new RaceStore;
       race_store->undead.push_back(factory.create_undead());
       race_store->mage.push_back(factory.create_mage());
