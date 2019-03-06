@@ -7,7 +7,7 @@
 #include <iostream>
 #include <vector>
 
-// типы воинов
+// Типы воинов
 class Undead {
   public:
     virtual void info() = 0;
@@ -26,7 +26,7 @@ class Druid {
     virtual ~Druid() {}
 };
 
-// воины орды
+// Воины орды
 class HordeUndead : public Undead {
   public:
     void info() {
@@ -48,7 +48,7 @@ class HordeDruid : public Druid {
     }
 };
 
-// воины альянса
+// Воины альянса
 class AllianceUndead : public Undead {
   public:
     void info() {
@@ -70,7 +70,7 @@ class AllianceDruid : public Druid {
     }
 };
 
-// цитадель (абстрактная фабрика для производства воинов)
+// Цитадель (абстрактная фабрика для производства воинов)
 class CitadelFactory {
   public:
     virtual Undead* create_undead() = 0;
@@ -79,7 +79,7 @@ class CitadelFactory {
     virtual ~CitadelFactory() {}
 };
 
-// башня орды (фабрика для создания воинов орды)
+// Башня орды (фабрика для создания воинов орды)
 class HordeTowerFactory : public CitadelFactory {
   public:
     Undead* create_undead() {
@@ -93,7 +93,7 @@ class HordeTowerFactory : public CitadelFactory {
     }
 };
 
-// казарма альянса (фабрика для создания воинов альянса)
+// Казарма альянса (фабрика для создания воинов альянса)
 class AllianceBarracksFactory : public CitadelFactory {
   public:
     Undead* create_undead() {
@@ -107,7 +107,7 @@ class AllianceBarracksFactory : public CitadelFactory {
     }
 };
 
-// хранилище всех воинов расы
+// Хранилище всех воинов расы
 class RaceStore {
   public:
     ~RaceStore() {
@@ -137,7 +137,7 @@ class RaceStore {
     std::vector<Druid*> druid;
 };
 
-// cтроитель расы
+// Строитель расы
 class RaceBuilder {
   public:
     RaceStore* create_race(CitadelFactory &factory) {
