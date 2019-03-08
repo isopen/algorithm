@@ -43,6 +43,8 @@ int main() {
   Rectangle* rectangle = RectangleFactory::makeRectangle(1, 5);
   std::cout << rectangle->get_width() << std::endl;
   std::cout << rectangle->get_height() << std::endl;
+
+  return 0;
 }
 
 // 1
